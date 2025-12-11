@@ -7,6 +7,7 @@ import {
   PointElement,
   Tooltip,
   Legend,
+  plugins,
 } from "chart.js";
 import { callback, color } from 'chart.js/helpers';
 
@@ -19,60 +20,75 @@ ChartJS.register(
   Legend
 );
 
-export default function LineGraph({ labels, values, label="Forecast" }) {
+export default function LineGraph({ forecastData, forecastLabel }) {
+   
     const data = {
-        labels,
+        labels: forecastLabel,
         datasets: [
             {
-                label,
-                lineColor: "#ff0000",
-                pointBackgroundColor: "#00ff00",
-                pointBorderColor: "#0000ff",
-                data: values,
-                borderWidth: 2,
-                tension: 0.4,
+                fill: true,
+                label: "Temperature",
+                data: forecastData,
+                borderColor: '#3B82F6',
+                backgroundColor: (context) => {
+                    const chart = context.chart;
+                    const { ctx, chartArea } = chart;
+
+                    if (!chartArea) return null;
+
+                    const gradient = ctx.createLinearGradient(0, chartArea.top, 0, chartArea.bottom);
+                    gradient.addColorStop(0, "#BBDDFF");
+                    gradient.addColorStop(1, "rgba(59, 130, 246, 0");
+
+                    return gradient;
+                },
+                tension: 0.6,
                 pointRadius: 3,
-                fill: false,
+                borderWidth: 2,
             },
         ],
     };
     
-    const options = {
+    const weatherOptions = {
         responsive: true,
         maintainAspectRatio: false,
-        plugin: {
-            legend: {
-                labels: {
-                    color: "#ff0000",
-                },
-                position: "top",
-            },
+        plugins: {
+            legend: false,
             tooltip: {
-                titleColor: "#00ff00",
-                bodyColor: "#0000ff",
-                backgroundColor: "#1f2937",
-                borderColor: "#fff",
-                borderWidth: 1,
+                enabled: true,
+                backgroundColor: '#2D3748',
+                titleColor: '#FFFFFF',
+                bodyColor: '#FFFFFF',
+                bodyFont: {
+                    size: 14,
+                    weight: 'bold',
+                },
+                displayColors: false,
             },
         },
         scales: {
             x: {
-                ticks: { color: "#ff0000" },
-                grid: { display: false },
+                grid: {
+                    display: false,
+                },
+                ticks: {
+                    color: '#666',
+                },
             },
             y: {
-                grid: { drawBorder: false },
+                grid: {
+                    color: 'rgba(0, 0, 0, 0.1)',
+                },
                 ticks: {
-                    color: "#00ff00",
-                    callback: (value) => `${value}°C`,
+                    color: '#666',
                 },
             },
         },
     };
 
     return (
-        <div className="w-full h-64">
-            <Line data={data} options={options} />
+        <div className="w-full h-64 bg-white/2 p-4 rounded-lg shadow-sm hover:shadow-md">
+            <Line data={data} options={weatherOptions} />
         </div>
     );
 }

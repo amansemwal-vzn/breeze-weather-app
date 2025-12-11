@@ -11,7 +11,6 @@ const WeatherCard = ({ weather=null, description=null, fetchDate=null, city=null
     
     return `${weekday}, ${day} ${month}`;
   };
-  time = "day"
 
   const imageFile = WeatherImages[time][weather]?.[description]; 
 

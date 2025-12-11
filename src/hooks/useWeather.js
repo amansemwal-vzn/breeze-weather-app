@@ -25,8 +25,6 @@ export const useWeather = (apiKey) => {
             if (!currentRes.ok) throw new Error("Failed to fetch current weather");
             const currentData = await currentRes.json();
 
-            console.log("DODODO currentData: ", currentData);
-
             // Fetch 5-day forecast (3-hour intervals)
             const forecastRes = await fetch(
               `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`
@@ -34,10 +32,12 @@ export const useWeather = (apiKey) => {
             if (!forecastRes.ok) throw new Error("Failed to fetch forecast");
             const forecastData = await forecastRes.json();
 
-            console.log("DODODO forecastData: ", forecastData);
-
             // Extract next 12 hours (4 entries x 3-hour intervals)
             const next12Hours = forecastData.list.slice(0, 4);
+
+            const hourlyLabels = next12Hours.map(item => new Date(item.dt_txt).toLocaleTimeString([], { hour: "numeric" }));
+
+            const hourlyTemps = next12Hours.map(item => item.main.temp);
 
             // Group forecast by day
             const groupedByDay = forecastData.list.reduce((acc, item) => {
@@ -46,6 +46,19 @@ export const useWeather = (apiKey) => {
               acc[day].push(item);
               return acc;
             }, {});
+
+            const dailyLabels = Object.keys(groupedByDay).map(dateStr => {
+              const dateObj = new Date(dateStr);
+
+              const day = dateObj.getDate();  
+              const weekday = dateObj.toLocaleDateString("en-US", { weekday: "short" }); 
+                        
+              return `${day} ${weekday}`;
+            });
+
+            const dailyTemps = Object.values(groupedByDay).map(dayList =>
+              dayList.reduce((sum, item) => sum + item.main.temp, 0) / dayList.length
+            );
 
             // State updates
             setCurrent({
@@ -66,8 +79,8 @@ export const useWeather = (apiKey) => {
             });
 
             setForecast(forecastData);
-            setHourly(next12Hours);
-            setDaily(groupedByDay);
+            setHourly({ labels: hourlyLabels, temps: hourlyTemps });
+            setDaily({ labels: dailyLabels, temps: dailyTemps });
             setFetchedAt(new Date().toISOString());
 
             setLoading(false);
@@ -89,12 +102,12 @@ export const useWeather = (apiKey) => {
   }, [apiKey]);
 
   return {
-    current,       // cleaned current weather
-    forecast,      // raw forecast
-    hourly,        // next 12 hours
-    daily,         // grouped by day
-    coords,        // user location
-    fetchedAt,     // timestamp
+    current,
+    forecast,
+    hourly,
+    daily,
+    coords,
+    fetchedAt,
     loading,
     error,
   };
