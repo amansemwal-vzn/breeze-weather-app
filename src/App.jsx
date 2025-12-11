@@ -1,19 +1,28 @@
 import { useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import './App.css'
-import { useWeather } from './hooks/useWeather'
 import Home from './pages/Home'
+import Explore from './pages/Explore'
+import NotFound from './pages/NotFound'
+import Forecast from './pages/Forecast'
+import Background from './micros/Background'
+import Navbar from './components/Navbar'
+import useLenis from './hooks/useLenis'
 
 function App() {
-
-  console.log("DODODO weather is:", useWeather(import.meta.env.VITE_OPEN_WEATHER_API_KEY));
+  useLenis();
   return (
-    <>
+    <div className='w-full p-6 font-body'>
+      <Background />
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/explore" element={<Explore />} />
+        <Route path="/forecast" element={<Forecast />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
-      <p className='text-white'>YOOOOOOOOOOOOOOOOOOOOOo!!!</p>
-    </>
+    </div>
   )
 }
 

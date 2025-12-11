@@ -1,0 +1,174 @@
+{
+    "day": {
+        "Clear": {
+            "clear sky"                         : "clear_sky_day.png"
+        },
+        "Rain": {
+            "light rain"                        : "light_rain_day.png",
+            "moderate rain"                     : "light_rain_day.png",
+            "heavy intensity rain"              : "heavy_rain_day.png",
+            "very heavy rain"                   : "heavy_rain_day.png",
+            "extreme rain"                      : "heavy_rain_day.png",
+            "freezing rain"                     : "freezing_rain_day.png",
+            "light intensity shower rain"       : "light_shower_rain_day.png",
+            "shower rain"                       : "light_shower_rain_day.png",
+            "heavy intensity shower rain"       : "heavy_shower_rain_day.png",
+            "ragged shower rain"                : "heavy_shower_rain_day.png"
+        },
+        "Clouds": {
+            "few clouds"                : "few_clouds_day.png",
+            "scattered clouds"          : "few_clouds_day.png",
+            "broken clouds"             : "medium_clouds_day.png",
+            "overcast clouds"          : "heavy_clouds_day.png"
+        },
+        "Drizzle": {
+            "light intensity drizzle"           : "drizzle_day.png",
+            "drizzle"                           : "drizzle_day.png",
+            "heavy intensity drizzle"           : "drizzle_day.png",
+            "light intensity drizzle rain"      : "light_shower_rain_day.png",
+            "drizzle rain"                      : "light_shower_rain_day.png",
+            "heavy intensity drizzle rain"      : "heavy_shower_rain_day.png",
+            "shower rain and drizzle"           : "heavy_shower_rain_day.png",
+            "heavy shower rain and drizzle"     : "heavy_shower_rain_day.png",
+            "shower drizzle"                    : "heavy_shower_rain_day.png"
+        },
+        "Thunderstorm": {
+            "thunderstorm with light rain"      : "light_thunder_day.png",
+            "thunderstorm with rain"            : "light_thunder_day.png",
+            "thunderstorm with light drizzle"   : "light_thunder_day.png",
+            "thunderstorm with drizzle"         : "light_thunder_day.png",
+            "thunderstorm with heavy rain"      : "heavy_thunder_day.png",
+            "thunderstorm with heavy drizzle"   : "heavy_thunder_day.png",
+            "light thunderstorm"                : "thunderstorm_day.png", 
+            "thunderstorm"                      : "thunderstorm_day.png",
+            "heavy thunderstorm"                : "thunderstorm_day.png",
+            "ragged thunderstorm"               : "thunderstorm_day.png"
+        },
+        "Snow": {
+            "light snow"                        : "light_snow_day.png",
+            "snow"                              : "light_snow_day.png",
+            "sleet"                             : "light_snow_day.png",
+            "light shower sleet"                : "light_snow_day.png",
+            "light shower snow"                 : "light_snow_day.png",
+            "shower snow"                       : "light_snow_day.png",
+            "light rain and snow"               : "light_snow_day.png",
+            "shower sleet"                      : "light_snow_day.png",
+            "heavy snow"                        : "heavy_snow_day.png",
+            "rain and snow"                     : "heavy_snow_day.png",
+            "heavy shower snow"                 : "heavy_snow_day.png"
+        },
+        "Mist": {
+            "mist"                              : "fog_day.png"
+        },
+        "Smoke": {
+            "smoke"                             : "dust_day.png"
+        },
+        "Haze": {
+            "haze"                              : "fog_day.png"
+        },
+        "Dust": {
+            "sand/dust whirls"                  : "dust_day.png"
+        },
+        "Fog": {
+            "fog"                               : "fog_day.png"
+        },
+        "Sand": {
+            "sand"                              : "dust_day.png"
+        },
+        "Ash": {
+            "volcanic ash"                      : "dust_day.png"
+        },
+        "Squall": {
+            "squalls"                           : "fog_day.png"
+        },
+        "Tornado": {
+            "tornado"                           : "fog_day.png"
+        }
+    },
+    "night": {
+        "Clear": {
+            "clear sky"                         : "clear_sky_night.png"
+        },
+        "Rain": {
+            "light rain"                        : "light_rain_night.png",
+            "moderate rain"                     : "light_rain_night.png",
+            "heavy intensity rain"              : "heavy_rain_night.png",
+            "very heavy rain"                   : "heavy_rain_night.png",
+            "extreme rain"                      : "heavy_rain_night.png",
+            "freezing rain"                     : "freezing_rain_night.png",
+            "light intensity shower rain"       : "light_shower_rain_night.png",
+            "shower rain"                       : "light_shower_rain_night.png",
+            "heavy intensity shower rain"       : "heavy_shower_rain_night.png",
+            "ragged shower rain"                : "heavy_shower_rain_night.png"
+        },
+        "Clouds": {
+            "few clouds"                : "few_clouds_night.png",
+            "scattered clouds"          : "few_clouds_night.png",
+            "broken clouds"             : "medium_clouds_night.png",
+            "overcast clouds"          : "heavy_clouds_night.png"
+        },
+        "Drizzle": {
+            "light intensity drizzle"           : "drizzle_night.png",
+            "drizzle"                           : "drizzle_night.png",
+            "heavy intensity drizzle"           : "drizzle_night.png",
+            "light intensity drizzle rain"      : "light_shower_rain_night.png",
+            "drizzle rain"                      : "light_shower_rain_night.png",
+            "heavy intensity drizzle rain"      : "heavy_shower_rain_night.png",
+            "shower rain and drizzle"           : "heavy_shower_rain_night.png",
+            "heavy shower rain and drizzle"     : "heavy_shower_rain_night.png",
+            "shower drizzle"                    : "heavy_shower_rain_night.png"
+        },
+        "Thunderstorm": {
+            "thunderstorm with light rain"      : "light_thunder_night.png",
+            "thunderstorm with rain"            : "light_thunder_night.png",
+            "thunderstorm with light drizzle"   : "light_thunder_night.png",
+            "thunderstorm with drizzle"         : "light_thunder_night.png",
+            "thunderstorm with heavy rain"      : "heavy_thunder_night.png",
+            "thunderstorm with heavy drizzle"   : "heavy_thunder_night.png",
+            "light thunderstorm"                : "thunderstorm_night.png", 
+            "thunderstorm"                      : "thunderstorm_night.png",
+            "heavy thunderstorm"                : "thunderstorm_night.png",
+            "ragged thunderstorm"               : "thunderstorm_night.png"
+        },
+        "Snow": {
+            "light snow"                        : "light_snow_night.png",
+            "snow"                              : "light_snow_night.png",
+            "sleet"                             : "light_snow_night.png",
+            "light shower sleet"                : "light_snow_night.png",
+            "light shower snow"                 : "light_snow_night.png",
+            "shower snow"                       : "light_snow_night.png",
+            "light rain and snow"               : "light_snow_night.png",
+            "shower sleet"                      : "light_snow_night.png",
+            "heavy snow"                        : "heavy_snow_night.png",
+            "rain and snow"                     : "heavy_snow_night.png",
+            "heavy shower snow"                 : "heavy_snow_night.png"
+        },
+        "Mist": {
+            "mist"                              : "fog_night.png"
+        },
+        "Smoke": {
+            "smoke"                             : "dust_night.png"
+        },
+        "Haze": {
+            "haze"                              : "fog_night.png"
+        },
+        "Dust": {
+            "sand/dust whirls"                  : "dust_night.png"
+        },
+        "Fog": {
+            "fog"                               : "fog_night.png"
+        },
+        "Sand": {
+            "sand"                              : "dust_night.png"
+        },
+        "Ash": {
+            "volcanic ash"                      : "dust_night.png"
+        },
+        "Squall": {
+            "squalls"                           : "fog_night.png"
+        },
+        "Tornado": {
+            "tornado"                           : "fog_night.png"
+        }
+    }
+}
